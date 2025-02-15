@@ -1,0 +1,25 @@
+@model dynamic
+
+<h2>Assessment Breakdown</h2>
+<table class="table table-bordered">
+    <tbody>
+    <tr>
+        <th>Total Marks</th>
+        <td>@Model.TotalMarks</td>
+    </tr>
+    <tr>
+        <th>Scored Points</th>
+        <td>@Model.ScoredPoints</td>
+    </tr>
+    <tr>
+        <th>Percentage</th>
+        <td>@Model.Percentage.ToString("F2")%</td>
+    </tr>
+    <tr>
+        <th>Performance</th>
+        <td>@Model.Performance</td>
+    </tr>
+    </tbody>
+</table>
+
+<a asp-action="ViewTakenAssessments" class="btn btn-secondary">Back to Assessments</a>

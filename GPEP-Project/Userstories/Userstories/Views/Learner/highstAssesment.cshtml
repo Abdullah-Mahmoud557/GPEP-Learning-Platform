@@ -1,0 +1,33 @@
+@model IEnumerable<Userstories.Models.Assessments>
+
+<h2>Highest Score Assessments</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Type</th>
+        <th>Total Marks</th>
+        <th>Passing Marks</th>
+        <th>Criteria</th>
+        <th>Weightage</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var assessment in Model)
+    {
+        <tr>
+            <td>@assessment.Title</td>
+            <td>@assessment.Type</td>
+            <td>@assessment.TotalMarks</td>
+            <td>@assessment.PassingMarks</td>
+            <td>@(assessment.Criteria ?? "N/A")</td>
+            <td>@(assessment.Weightage.HasValue ? assessment.Weightage.Value.ToString("F2") : "N/A")</td>
+            <td>@(assessment.Description ?? "N/A")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<button class="btn btn-secondary" onclick="history.back()">Go Back</button>
+ 

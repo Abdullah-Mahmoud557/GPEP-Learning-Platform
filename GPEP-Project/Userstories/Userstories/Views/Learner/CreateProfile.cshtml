@@ -1,0 +1,33 @@
+﻿@model PersonalizationProfiles
+
+<h2>Create Profile</h2>
+<form asp-action="CreateProfile" method="post">
+    <!-- Hidden field for LearnerID -->
+    <input type="hidden" asp-for="LearnerID" />
+
+    <div class="form-group">
+        <label asp-for="PreferredContentType"></label>
+        <input asp-for="PreferredContentType" class="form-control" />
+        <span asp-validation-for="PreferredContentType" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmotionalState"></label>
+        <input asp-for="EmotionalState" class="form-control" />
+        <span asp-validation-for="EmotionalState" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PersonalityType"></label>
+        <input asp-for="PersonalityType" class="form-control" />
+        <span asp-validation-for="PersonalityType" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Profiles" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

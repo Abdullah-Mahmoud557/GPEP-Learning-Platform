@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Add Activity";
+}
+
+<h2>Add Activity</h2>
+
+<form asp-action="AddActivity" method="post">
+    <input type="hidden" name="courseId" value="@ViewBag.CourseID" />
+    <input type="hidden" name="moduleId" value="@ViewBag.ModuleID" />
+    <div class="form-group">
+        <label for="activityType">Activity Type</label>
+        <input type="text" class="form-control" id="activityType" name="activityType" required />
+    </div>
+    <div class="form-group">
+        <label for="instructionDetails">Instruction Details</label>
+        <textarea class="form-control" id="instructionDetails" name="instructionDetails" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="maxPoints">Max Points</label>
+        <input type="number" class="form-control" id="maxPoints" name="maxPoints" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Activity</button>
+</form>
+<a asp-action="Modules" asp-route-id="@ViewBag.CourseID" class="btn btn-secondary">Back to Modules</a>

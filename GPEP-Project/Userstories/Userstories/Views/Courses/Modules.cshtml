@@ -1,0 +1,28 @@
+@model IEnumerable<Userstories.Models.Modules>
+
+<h2>Modules</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Difficulty</th>
+        <th>Content URL</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var module in Model)
+    {
+        <tr>
+            <td>@module.Title</td>
+            <td>@module.Difficulty</td>
+            <td>@module.ContentURL</td>
+            <td>
+                <a href="@Url.Action("Activities", "Courses", new { id = module.ModuleID })">View Activities</a>    |
+                <a href="@Url.Action("ViewAssessments", "Instructor", new { id = module.ModuleID })">View Assessments</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

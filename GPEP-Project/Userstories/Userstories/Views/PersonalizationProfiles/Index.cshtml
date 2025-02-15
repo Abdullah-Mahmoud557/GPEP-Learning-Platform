@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PersonalizationProfiles>
+
+<div class="container">
+    <h2>Personalization Profiles</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Learner ID</th>
+                <th>Profile ID</th>
+                <th>Preferred Content Type</th>
+                <th>Emotional State</th>
+                <th>Personality Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.LearnerID</td>
+                    <td>@item.ProfileID</td>
+                    <td>@item.PreferredContentType</td>
+                    <td>@item.EmotionalState</td>
+                    <td>@item.PersonalityType</td>
+                    <td>
+                        <a asp-action="Details" asp-route-learnerId="@item.LearnerID" asp-route-profileId="@item.ProfileID" class="btn btn-info btn-sm">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                        <a asp-action="Edit" asp-route-learnerId="@item.LearnerID" asp-route-profileId="@item.ProfileID" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <form asp-action="Delete" asp-route-learnerId="@item.LearnerID" asp-route-profileId="@item.ProfileID" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

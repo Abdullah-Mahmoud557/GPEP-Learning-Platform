@@ -1,0 +1,36 @@
+@model Userstories.Models.Admin
+
+<h2>Edit Profile</h2>
+
+<form asp-action="EditProfileDetails" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="text" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageData">Profile Image</label>
+        @if (Model.ImageData != null)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.ImageData)" alt="Profile Image" class="img-thumbnail" style="max-width: 200px;" />
+        }
+        else
+        {
+            <p>No image uploaded.</p>
+        }
+        <input type="file" name="ImageFile" class="form-control mt-2" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+    <a asp-action="Dashboard" asp-route-id="@Model.AdminID" class="btn btn-secondary mt-3">Cancel</a></form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

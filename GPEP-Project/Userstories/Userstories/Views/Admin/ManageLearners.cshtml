@@ -1,0 +1,36 @@
+@model IEnumerable<Userstories.Models.Learner>
+
+<h2>Manage Learners</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Learner ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var learner in Model)
+    {
+        <tr>
+            <td>@learner.LearnerID</td>
+            <td>@learner.FirstName</td>
+            <td>@learner.LastName</td>
+            <td>@learner.Email</td>
+            <td>
+                <form asp-action="DeleteLearner" method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="@learner.LearnerID" />
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this learner?');">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Dashboard2" class="btn btn-success">Cancel</a>
+

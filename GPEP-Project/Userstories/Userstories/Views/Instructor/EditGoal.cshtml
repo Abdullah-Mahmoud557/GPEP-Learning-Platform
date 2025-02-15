@@ -1,0 +1,32 @@
+@model Userstories.Models.LearningGoal
+
+@{
+    ViewData["Title"] = "Edit Learning Goal";
+}
+
+<h2>Edit Learning Goal</h2>
+
+<form asp-action="EditGoal" method="post">
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Deadline"></label>
+        <input asp-for="Deadline" type="datetime-local" class="form-control" />
+        <span asp-validation-for="Deadline" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="ViewGoals" class="btn btn-secondary">Cancel</a>
+</form>

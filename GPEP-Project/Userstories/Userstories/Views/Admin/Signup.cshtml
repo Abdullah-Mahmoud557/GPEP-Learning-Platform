@@ -1,0 +1,38 @@
+﻿@model Userstories.Models.Admin
+
+@{
+    ViewData["Title"] = "Signup as Admin";
+ }
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Signup as Admin</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Signup" method="post">
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" class="form-control" id="Email" name="Email" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" class="form-control" id="Password" name="Password" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="SecretCode">Secret Code</label>
+                            <input type="text" class="form-control" id="SecretCode" name="secretCode" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Signup</button>
+                        <div asp-validation-summary="All" class="text-danger mt-3"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+@model IEnumerable<Userstories.Models.PersonalizationProfiles>
+
+<h2>Manage Personalization Profiles</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Profile ID</th>
+        <th>Learner ID</th>
+        <th>Preferred Content Type</th>
+        <th>Emotional State</th>
+        <th>Personality Type</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var profile in Model)
+    {
+        <tr>
+            <td>@profile.ProfileID</td>
+            <td>@profile.LearnerID</td>
+            <td>@profile.PreferredContentType</td>
+            <td>@profile.EmotionalState</td>
+            <td>@profile.PersonalityType</td>
+            <td>
+                <form asp-action="DeleteProfile" method="post" style="display:inline;">
+                    <input type="hidden" name="learnerId" value="@profile.LearnerID" />
+                    <input type="hidden" name="profileId" value="@profile.ProfileID" />
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this profile?');">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Dashboard2" class="btn btn-success">Cancel</a>

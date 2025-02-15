@@ -1,0 +1,55 @@
+@model List<Userstories.Models.Modules>
+
+@{
+    ViewData["Title"] = "Course Modules";
+    var learnerId = ViewBag.LearnerID ?? 0;
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h2 class="m-0">Modules</h2>
+            <button class="btn btn-secondary" onclick="history.back()" data-bs-toggle="tooltip" title="Go back to the previous page">
+                <i class="fas fa-arrow-left"></i> Go Back
+            </button>
+        </div>
+        <div class="card-body">
+            @if (Model == null || !Model.Any())
+            {
+                <div class="alert alert-warning text-center" role="alert">
+                    <i class="fas fa-info-circle"></i> No modules available for this course.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Difficulty</th>
+                            <th scope="col">Content URL</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var module in Model)
+                        {
+                            <tr>
+                                <td>@module.Title</td>
+                                <td>@module.Difficulty</td>
+                                <td>
+                                    <a href="@module.ContentURL" target="_blank" class="text-primary text-decoration-none" data-bs-toggle="tooltip" title="Open module content">
+                                        <i class="fas fa-external-link-alt"></i> View Content
+                                    </a>
+                                </td>
+ 
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

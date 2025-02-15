@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Userstories.Models.Course>
+
+<h2>Courses</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Learning Objective</th>
+        <th>Credit Points</th>
+        <th>Difficulty Level</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var course in Model)
+    {
+        <tr>
+            <td>@course.Title</td>
+            <td>@course.LearningObjective</td>
+            <td>@course.CreditPoints</td>
+            <td>@course.DifficultyLevel</td>
+            <td>@course.Description</td>
+            <td>
+                <a href="@Url.Action("Details", "Courses", new { id = course.CourseID })">Details</a> |
+                <a href="@Url.Action("Enroll", "Learner", new { id = course.CourseID })">Enroll</a> |
+                <a href="@Url.Action("Modules", "Courses", new { id = course.CourseID })">Modules</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

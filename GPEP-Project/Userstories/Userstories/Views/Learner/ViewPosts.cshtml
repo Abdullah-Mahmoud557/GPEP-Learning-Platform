@@ -1,0 +1,43 @@
+@model IEnumerable<dynamic>
+
+<h2>Posts in Forum ID: @ViewBag.ForumId</h2>
+
+<!-- Form to Post as Learner -->
+<form asp-action="PostAsLearner" method="post" class="mb-3">
+    <input type="hidden" name="forumId" value="@ViewBag.ForumId" />
+    <div class="form-group">
+        <textarea name="postContent" class="form-control" rows="3" placeholder="Write your post here..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Post</button>
+</form>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Author Type</th>
+        <th>Author ID</th>
+        <th>Post</th>
+        <th>Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var post in Model)
+    {
+        <tr>
+            <td>@post.AuthorType</td>
+            <td>@post.AuthorID</td>
+            <td>@post.Post</td>
+            <td>@(post.Time?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="ViewForums" class="btn btn-secondary">Back to Forums</a>

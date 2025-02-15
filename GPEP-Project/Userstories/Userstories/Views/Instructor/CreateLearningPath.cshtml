@@ -1,0 +1,57 @@
+@model Userstories.Models.LearningPath
+
+<h2>Create Learning Path</h2>
+
+<!-- Display success message -->
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+<!-- Validation Summary -->
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-action="CreateLearningPath" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="LearnerID">Learner ID</label>
+            <input asp-for="LearnerID" class="form-control" placeholder="Enter Learner ID" />
+            <span asp-validation-for="LearnerID" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="ProfileID">Profile ID</label>
+            <input asp-for="ProfileID" class="form-control" placeholder="Enter Profile ID" />
+            <span asp-validation-for="ProfileID" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="CompletionStatus">Completion Status</label>
+        <input asp-for="CompletionStatus" class="form-control" placeholder="Enter completion status (e.g., In Progress)" />
+        <span asp-validation-for="CompletionStatus" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="CustomContent">Custom Content</label>
+        <textarea asp-for="CustomContent" class="form-control" placeholder="Describe the custom content..."></textarea>
+        <span asp-validation-for="CustomContent" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="AdaptiveRules">Adaptive Rules</label>
+        <textarea asp-for="AdaptiveRules" class="form-control" placeholder="Specify adaptive rules..."></textarea>
+        <span asp-validation-for="AdaptiveRules" class="text-danger"></span>
+    </div>
+
+    <!-- Button Group -->
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="ViewLearningPaths" class="btn btn-secondary ms-2">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

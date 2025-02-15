@@ -1,0 +1,55 @@
+@model IEnumerable<Userstories.Models.LearningGoal>
+
+<h2 class="text-center my-4">My Goals</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var goal in Model)
+        {
+            <tr>
+                <td>@goal.Status</td>
+                <td>@goal.Deadline.ToString("yyyy-MM-dd")</td>
+                <td>@goal.Description</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-center mt-4">
+    <a asp-action="AvailableGoals" class="btn btn-primary mx-2">Add New Goal</a>
+    <a asp-action="Dashboard2" class="btn btn-secondary mx-2">Cancel</a>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+    .table {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .table thead {
+        background-color: #e9ecef;
+        color: #495057;
+    }
+    .table tbody tr td {
+        vertical-align: middle;
+    }
+    .btn {
+        min-width: 150px;
+    }
+</style>

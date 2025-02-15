@@ -1,0 +1,357 @@
+@model List<Userstories.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+    var learnerId = ViewBag.LearnerID ?? 4;
+    var notify = ViewBag.notify ??0;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background: linear-gradient(180deg, #495057, #343a40);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            padding: 1rem;
+        }
+
+        .sidebar h3 {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background: #6c757d;
+            color: #fff;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card {
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background: #343a40;
+            color: #adb5bd;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn-info {
+            background: linear-gradient(90deg, #17a2b8, #0d6efd);
+            color: #fff;
+        }
+
+        .btn-info:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #0d6efd, #17a2b8);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #0056b3, #004080);
+        }
+
+        .btn-warning {
+            background: linear-gradient(90deg, #ffc107, #e0a800);
+            color: #212529;
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #e0a800, #ffc107);
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                height: auto;
+                position: static;
+                padding: 1rem 0;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 sidebar bg-light shadow-sm">
+            <h3 class="text-primary py-3 text-center border-bottom">EduBoard</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item my-1">
+                    <a href="/Learner/Dashboard?id=@learnerId" class="nav-link text-dark d-flex align-items-center">
+                        <i class="fas fa-house me-2 text-warning"></i> <span style="color: lightgray;">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Learner/Courses?id=@learnerId" class="nav-link active">
+                        <i class="fas fa-book me-2 text-info"></i> <span style="color: lightgray;">Courses</span>
+                    </a>
+                </li>
+               
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-10 content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="text-dark fw-bold">Courses</h1>
+                <div>
+                    <a href="/Courses/EnrolledCourses?learnerId=@learnerId" class="btn btn-primary me-2">
+                        <i class="fas fa-user-check"></i> Enrolled
+                    </a>
+                    <a href="/Courses/CompletedCourses?learnerId=@learnerId" class="btn btn-success me-2">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </a>
+                    <a href="/Courses/AllTheCourses?learnerId=@learnerId" class="btn btn-secondary">
+                        <i class="fas fa-user-book"></i> Show All the Courses
+                    </a>
+                </div>
+            </div>
+
+            @if (Model == null || !Model.Any())
+            {
+                <div class="alert alert-warning" role="alert">
+                    No courses available.
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    @foreach (var course in Model)
+                    {
+                        <div class="col-md-4 course-card">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">@course.Title</h5>
+                                    <p class="card-text text-muted">@course.LearningObjective</p>
+                                    <p class="mb-1"><strong>Credit Points:</strong> @course.CreditPoints</p>
+                                    <p class="mb-1"><strong>Difficulty Level:</strong> @course.DifficultyLevel</p>
+                                    <p class="card-text">@course.Description</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <a href="/Courses/Show?courseId=@course.CourseID&learnerId=@learnerId" class="btn btn-info">Show</a>
+                                    <button class="btn btn-primary" onclick="showEnrollPopup(@course.CourseID, @learnerId)">Enroll</button>
+                                    <button class="btn btn-warning" onclick="showPrerequisitesPopup(@course.CourseID, @learnerId)">Prerequisites</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </main>
+    </div>
+</div>
+
+<!-- Enroll Confirmation Modal -->
+<div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enrollModalLabel">Confirm Enrollment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to enroll in this course?
+                <div id="prerequisitesMessage" class="mt-3">
+                    <!-- Prerequisites message will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <form id="enrollForm" method="post" action="/Courses/Enroll">
+                    <input type="hidden" name="courseId" id="enrollCourseId">
+                    <input type="hidden" name="learnerId" id="enrollLearnerId">
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Prerequisites Modal -->
+<div class="modal fade" id="prerequisitesModal" tabindex="-1" aria-labelledby="prerequisitesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="prerequisitesModalLabel">Prerequisites</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="prerequisitesMessage">
+                    <!-- Prerequisites message will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="enrollToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Notification</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastMessage">
+            <!-- Toast message will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 GPEP. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    async function showEnrollPopup(courseId, learnerId) {
+        const enrollModal = new bootstrap.Modal(document.getElementById('enrollModal'));
+        const messageContainer = document.getElementById('prerequisitesMessage');
+        const spinner = document.createElement('div');
+        spinner.id = 'loadingSpinner';
+        spinner.className = 'spinner-border text-primary';
+        messageContainer.appendChild(spinner);
+
+        // Reset modal state
+        spinner.style.display = 'inline-block';
+        messageContainer.innerText = 'Fetching prerequisites...';
+
+        // Populate hidden fields
+        document.getElementById('enrollCourseId').value = courseId;
+        document.getElementById('enrollLearnerId').value = learnerId;
+
+        try {
+            const response = await fetch(`/Courses/Prerequisites?courseId=${courseId}&learnerId=${learnerId}`);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+            // Display fetched prerequisites
+            spinner.style.display = 'none';
+            messageContainer.innerHTML = ''; // Clear previous messages
+
+            const lines = data.message.split('\n');
+            lines.forEach((line, index) => {
+                const p = document.createElement('p');
+                if (index === 0) {
+                    p.style.color = 'black';
+                } else if (line.includes('Not')) {
+                    p.style.color = 'red';
+                } else {
+                    p.style.color = 'green';
+                }
+                p.textContent = line;
+                messageContainer.appendChild(p);
+            });
+        } catch (error) {
+            console.error('Error fetching prerequisites:', error);
+            spinner.style.display = 'none';
+            messageContainer.innerText = 'Failed to fetch prerequisites. Please try again later.';
+        }
+
+        enrollModal.show();
+    }
+    async function showPrerequisitesPopup(courseId, learnerId) {
+        const response = await fetch(`/Courses/Prerequisites?courseId=${courseId}&learnerId=${learnerId}`);
+        const data = await response.json();
+        document.querySelector('#prerequisitesModal #prerequisitesMessage').innerText = data.message;
+        const prerequisitesModal = new bootstrap.Modal(document.getElementById('prerequisitesModal'));
+        prerequisitesModal.show();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const notify = @notify;
+        let toastMessage = '';
+        switch (notify) {
+            case 1:
+                toastMessage = 'You already registered for this course.';
+                break;
+            case 2:
+                toastMessage = 'The prerequisites are not met.';
+                break;
+            case 3:
+                toastMessage = 'Registration succeeded.';
+                break;
+            case 4:
+                toastMessage = 'Error: Missing information.';
+                break;
+            default:
+                toastMessage = '';
+        }
+
+        if (toastMessage) {
+            document.getElementById('toastMessage').innerText = toastMessage;
+            const enrollToast = new bootstrap.Toast(document.getElementById('enrollToast'));
+            enrollToast.show();
+
+            enrollToast._element.addEventListener('hidden.bs.toast', function () {
+                fetch(`/Courses/ResetNotify?learnerId=${@learnerId}`, { method: 'POST' });
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@model Userstories.Models.Instructor
+
+<h2>Instructor Profile</h2>
+
+<div class="card">
+    <div class="card-body">
+        <p><strong>First Name:</strong> @Model.FirstName</p>
+        <p><strong>Last Name:</strong> @Model.LastName</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Latest Qualification:</strong> @Model.LatestQualification</p>
+        <p><strong>Expertise Area:</strong> @Model.ExpertiseArea</p>
+        <p><strong>Created At:</strong> @Model.CreatedAt.ToShortDateString()</p>
+    </div>
+</div>
+
+<a asp-action="EditProfileDetails" class="btn btn-primary mt-3">Edit Profile</a>
+<a asp-action="Dashboard" asp-route-id="@Model.InstructorID" class="btn btn-secondary mt-3">Cancel</a>

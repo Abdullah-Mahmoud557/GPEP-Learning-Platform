@@ -1,0 +1,46 @@
+@model List<Userstories.Models.Course>
+
+@{
+    ViewData["Title"] = "Completed Courses";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Completed Courses for Learner @ViewBag.LearnerID</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning" role="alert">
+            No completed courses found for this learner.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Learning Objective</th>
+                <th>Credit Points</th>
+                <th>Difficulty Level</th>
+                <th>Description</th>
+                <th>Completion Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.CourseID</td>
+                    <td>@course.Title</td>
+                    <td>@course.LearningObjective</td>
+                    <td>@course.CreditPoints</td>
+                    <td>@course.DifficultyLevel</td>
+                    <td>@course.Description</td>
+                    <td>@course.CourseEnrollments?.FirstOrDefault()?.CompletionDate?.ToShortDateString()</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,32 @@
+@model IEnumerable<Userstories.Models.Modules>
+
+<h2>Modules</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Difficulty</th>
+        <th>Content URL</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var module in Model)
+    {
+        <tr>
+            <td>@module.Title</td>
+            <td>@module.Difficulty</td>
+            <td>@module.ContentURL</td>
+            <td>
+                <a href="@Url.Action("Activities", "Instructor", new { id = module.ModuleID })" class="btn btn-primary btn-sm">View Activities</a> |
+                <a href="@Url.Action("AddActivity", "Instructor", new { courseId = module.CourseID, moduleId = module.ModuleID })" class="btn btn-primary btn-sm">Add Activity</a> |
+                <a href="@Url.Action("AddAssessment", "Instructor", new { courseId = module.CourseID, moduleId = module.ModuleID })" class="btn btn-primary btn-sm">Add Assessment</a> |
+                <a href="@Url.Action("ViewModuleAssessments", "Instructor", new { courseId = module.CourseID, moduleId = module.ModuleID })" class="btn btn-primary btn-sm">View Assessments</a>
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="ViewCourses" class="btn btn-success">cancel</a>

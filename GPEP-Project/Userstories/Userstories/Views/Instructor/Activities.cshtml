@@ -1,0 +1,24 @@
+@model IEnumerable<Userstories.Models.Learning_activities>
+
+<h2>Activities</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Activity Type</th>
+        <th>Instruction Details</th>
+        <th>Max Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var activity in Model)
+    {
+        <tr>
+            <td>@activity.ActivityType</td>
+            <td>@activity.InstructionDetails</td>
+            <td>@activity.MaxPoints</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Modules" asp-route-id="@ViewBag.CourseID" class="btn btn-secondary">Back to Modules</a>

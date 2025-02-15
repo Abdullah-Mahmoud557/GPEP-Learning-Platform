@@ -1,0 +1,67 @@
+@model Userstories.Models.Learner
+
+<h2 class="text-center my-4">My Profile</h2>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <h3 class="card-title mb-4 text-primary">Personal Information</h3>
+        <dl class="row">
+            <dt class="col-sm-4">First Name:</dt>
+            <dd class="col-sm-8">@Model.FirstName</dd>
+
+            <dt class="col-sm-4">Last Name:</dt>
+            <dd class="col-sm-8">@Model.LastName</dd>
+
+            <dt class="col-sm-4">Email:</dt>
+            <dd class="col-sm-8">@Model.Email</dd>
+
+            <dt class="col-sm-4">Gender:</dt>
+            <dd class="col-sm-8">@Model.Gender</dd>
+
+            <dt class="col-sm-4">Birth Date:</dt>
+            <dd class="col-sm-8">@Model.BirthDate?.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-4">Country:</dt>
+            <dd class="col-sm-8">@Model.Country</dd>
+
+            <dt class="col-sm-4">Cultural Background:</dt>
+            <dd class="col-sm-8">@Model.CulturalBackground</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mt-4">
+    <a asp-action="ConfirmAccountDeletion" class="btn btn-danger mx-2">Delete My Account</a>
+    <a asp-action="EditProfileDetails" class="btn btn-primary mx-2">Edit Profile</a>
+    <a asp-action="Dashboard" asp-route-id="@Model.LearnerID" class="btn btn-secondary mx-2">Cancel</a>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+    .card {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    dl {
+        margin: 0;
+    }
+    dt {
+        font-weight: bold;
+        color: #495057;
+    }
+    dd {
+        margin-bottom: 10px;
+    }
+    a.btn {
+        min-width: 120px;
+    }
+</style>

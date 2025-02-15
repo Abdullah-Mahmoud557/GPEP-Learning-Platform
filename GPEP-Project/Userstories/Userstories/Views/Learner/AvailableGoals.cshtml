@@ -1,0 +1,31 @@
+@model IEnumerable<Userstories.Models.LearningGoal>
+
+<h2>Available Goals</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Status</th>
+        <th>Deadline</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var goal in Model)
+    {
+        <tr>
+            <td>@goal.Status</td>
+            <td>@goal.Deadline.ToShortDateString()</td>
+            <td>@goal.Description</td>
+            <td>
+                <form asp-action="AddGoal" method="post">
+                    <input type="hidden" name="goalId" value="@goal.ID" />
+                    <button type="submit" class="btn btn-primary">Add Goal</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="Dashboard2" class="btn btn-secondary">cancel</a>

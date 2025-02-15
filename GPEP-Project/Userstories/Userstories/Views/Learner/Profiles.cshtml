@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<PersonalizationProfiles>
+
+<h2>Your Personalization Profiles</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Profile ID</th>
+        <th>Preferred Content Type</th>
+        <th>Emotional State</th>
+        <th>Personality Type</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var profile in Model)
+    {
+        <tr>
+            <td>@profile.ProfileID</td>
+            <td>@profile.PreferredContentType</td>
+            <td>@profile.EmotionalState</td>
+            <td>@profile.PersonalityType</td>
+            <td>
+                <a asp-action="EditProfile" asp-route-profileId="@profile.ProfileID" class="btn btn-warning">Edit</a>
+                <form asp-action="DeleteProfile" asp-route-profileId="@profile.ProfileID" method="post"
+                      style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="CreateProfile" class="btn btn-success">Create New Profile</a>
+<a asp-action="Dashboard2" class="btn btn-success">Cancel</a>
+
+
+
+
+

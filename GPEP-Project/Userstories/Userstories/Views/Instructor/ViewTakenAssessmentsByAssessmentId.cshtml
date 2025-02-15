@@ -1,0 +1,31 @@
+@model IEnumerable<Userstories.Models.TakenAssessments>
+
+<h2>Taken Assessments for "@ViewBag.AssessmentTitle"</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Learner ID</th>
+        <th>Assessment Title</th>
+        <th>Total Marks</th>
+        <th>Scored Points</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LearnerID</td>
+            <td>@item.Assessment?.Title</td>
+            <td>@item.Assessment?.TotalMarks</td>
+            <td>@item.ScoredPoints</td>
+            <td>
+                <a asp-action="EditScore" asp-route-learnerId="@item.LearnerID" asp-route-assessmentId="@item.AssessmentID" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="ViewAssessments" class="btn btn-secondary">Back to Assessments</a>

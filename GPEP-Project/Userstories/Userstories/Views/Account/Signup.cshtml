@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Signup";
+    Layout = null;
+}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<style>
+    body {
+        background: linear-gradient(to right, #f12711, #f5af19);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: transform 0.2s, background-color 0.2s;
+        margin-bottom: 10px;
+    }
+    .btn:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    .card-header {
+        background: #7e22ce;
+        border-bottom: none;
+        color: #fff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    a {
+        color: #63b3ed;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #90cdf4;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Signup</h3>
+                </div>
+                <div class="card-body text-center">
+                    <a href="@Url.Action("Signup", "Learner")" class="btn btn-success">
+                        <i class="fas fa-user-graduate"></i> Signup as Learner
+                    </a><br />
+                    <a href="@Url.Action("Signup", "Instructor")" class="btn btn-warning">
+                        <i class="fas fa-chalkboard-teacher"></i> Signup as Instructor
+                    </a><br />
+                    <a href="@Url.Action("Signup", "Admin")" class="btn btn-primary">
+                        <i class="fas fa-user-shield"></i> Signup as Admin
+                    </a><br />
+                    <a href="@Url.Action("ChooseRole", "Account")" class="btn btn-secondary mt-3">
+                        <i class="fas fa-sign-in-alt"></i> Already have an account? Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,204 @@
+﻿@model Userstories.Models.Admin
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f8;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background: linear-gradient(180deg, #343a40, #212529);
+            color: #fff;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .sidebar a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background: #495057;
+            color: #fff;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .image-frame {
+            text-align: center;
+        }
+
+        .image-frame img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .action-buttons a {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #212529;
+            color: #adb5bd;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .profile-info .details {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+        /*Quests part*/
+        .quests-tab {
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .quests-tab:hover {
+            transform: scale(1.05);
+            background-color: #495057;
+            color: #fff;
+        }
+        /*end*/
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 sidebar bg-light shadow-sm">
+            <h3 class="text-primary py-3 text-center border-bottom">Admin Panel</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item my-1">
+                    <a href="#" class="nav-link text-dark d-flex align-items-center">
+                        <i class="fas fa-home me-2 text-warning"></i> <span style="color: white;">Dashboard</span>                    </a>
+                </li>
+                <li class="nav-item my-1">
+                    <a href="#" class="nav-link text-dark d-flex align-items-center">
+                        <i class="fas fa-cogs me-2 text-secondary"></i> <span style="color: white;">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-10 content">
+            <div class="profile-info">
+                <div class="details">
+                    <h1>Welcome, @Model.Email</h1>
+                    <p><strong>Email:</strong> @Model.Email</p>
+                </div>
+                <div class="image-frame">
+                    @if (Model.ImageData != null)
+                    {
+                        <img src="data:image;base64,@Convert.ToBase64String(Model.ImageData)" alt="Profile Image" />
+                        <form asp-action="UnsetImage" method="post">
+                            <input type="hidden" name="id" value="@Model.AdminID" />
+                            <button type="submit" class="btn btn-danger mt-2">Remove Image</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="@Model.AdminID" />
+                            <input type="file" name="image" class="form-control" />
+                            <button type="submit" class="btn btn-primary mt-2">Upload Image</button>
+                        </form>
+                    }
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons mt-4">
+                <a asp-action="ManageProfiles" class="btn btn-outline-primary d-flex align-items-center">
+                    <i class="fas fa-users me-2"></i> Manage Profiles
+                </a>
+                <a asp-action="ManageInstructors" class="btn btn-outline-success d-flex align-items-center">
+                    <i class="fas fa-chalkboard-teacher me-2"></i> Manage Instructors
+                </a>
+                <a asp-action="ManageLearners" class="btn btn-outline-warning d-flex align-items-center">
+                    <i class="fas fa-user-graduate me-2"></i> Manage Learners
+                </a>
+                <a asp-action="ViewProfile" class="btn btn-outline-danger d-flex align-items-center">
+                    <i class="fas fa-id-card me-2"></i> View Profile
+                </a>
+                <a asp-action="ViewForums" class="btn btn-outline-success d-flex align-items-center">
+                    <i class="fas fa-chalkboard-teacher me-2"></i> Manage Forums
+                </a>
+
+            </div>
+        </main>
+    </div>
+</div>
+<!-- New Quests Tab -->
+<div class="card mt-4 shadow-lg border-0">
+    <div class="card-body">
+        <h3 class="text-primary mb-3"><i class="fas fa-tasks"></i> Quests</h3>
+        <p class="text-muted">Engage in various quests to enhance your learning experience.</p>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="#" class="btn btn-outline-primary d-flex align-items-center quests-tab">
+                <i class="fas fa-flag-checkered me-2"></i> View Quests
+            </a>
+        </div>
+    </div>
+</div>
+<footer>
+    &copy; 2024 Your Company
+</footer>
+@*also quests*@
+<script>
+    document.querySelectorAll('.quests-tab').forEach(tab => {
+        tab.addEventListener('mouseover', () => {
+            tab.classList.add('hovered');
+        });
+
+        tab.addEventListener('mouseout', () => {
+            tab.classList.remove('hovered');
+        });
+
+        tab.addEventListener('click', () => {
+            window.location.href = '/Quest/AdminIndex'; // Redirect to the Index action in the Quest folder
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+@model IEnumerable<dynamic>
+
+<h2>Taken Assessments</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No assessments found.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Assessment Title</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Total Marks</th>
+            <th>Passing Marks</th>
+            <th>Score</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var assessment in Model)
+        {
+            <tr>
+                <td>@assessment.Title</td>
+                <td>@assessment.Description</td>
+                <td>@assessment.Type</td>
+                <td>@assessment.TotalMarks</td>
+                <td>@assessment.PassingMarks</td>
+                <td>@assessment.ScoredPoints</td>
+                <td>
+                    <a asp-action="AssessmentBreakdown" asp-route-assessmentId="@assessment.AssessmentID" class="btn btn-info btn-sm">
+                        View Breakdown
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<a asp-action="Dashboard2" class="btn btn-success">Back to Dashboard</a>

@@ -1,0 +1,58 @@
+@model IEnumerable<Userstories.Models.Collaborative>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instructor Quests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Instructor Quests</h1>
+    <button class="btn btn-secondary mb-3" onclick="window.location.href='@Url.Action("Dashboard2", "Instructor")'">Go Back to Dashboard</button>
+    <a href="@Url.Action("AddQuest", "Quest")" class="btn btn-primary mb-3">Add New Quest</a>
+
+    <form method="get" asp-action="InstructorIndex" class="mb-4">
+        <div class="form-group">
+            <label for="criteria">Filter by Criteria</label>
+            <input type="text" class="form-control" id="criteria" name="criteria" value="@ViewData["Criteria"]" placeholder="Enter criteria to filter" />
+        </div>
+        <button type="submit" class="btn btn-secondary mt-2">Filter</button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Difficulty Level</th>
+            <th>Criteria</th>
+            <th>Max Participants</th>
+            <th>Deadline</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var quest in Model)
+        {
+            <tr>
+                <td>@quest.title</td>
+                <td>@quest.description</td>
+                <td>@quest.difficulty_level</td>
+                <td>@quest.criteria</td>
+                <td>@quest.max_num_participants</td>
+                <td>@quest.deadline.ToString()</td>
+                <td>
+                    <a href="@Url.Action("UpdateDeadline", "Quest", new { id = quest.QuestID })" class="btn btn-warning">Update Deadline</a>
+                    <form asp-action="DeleteQuest" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="@quest.QuestID" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+@model IEnumerable<Userstories.Models.Learning_activities>
+
+@{
+    ViewData["Title"] = "Learning Activities";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="m-0">Learning Activities</h2>
+        </div>
+        <div class="card-body">
+            @if (Model == null ||!Model.Any())
+            {
+                <div class="alert alert-warning text-center" role="alert">
+                    <i class="fas fa-info-circle"></i> No activities found for this module.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th scope="col">Activity ID</th>
+                            <th scope="col">Instruction Details</th>
+                            <th scope="col">Activity Type</th>
+                            <th scope="col">Max Points</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var activity in Model)
+                        {
+                            <tr>
+                                <td>@activity.ActivityID</td>
+                                <td>@activity.InstructionDetails</td>
+                                <td>@activity.ActivityType</td>
+                                <td>@activity.MaxPoints</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+<button type="button" class="btn btn-secondary" onclick="history.back()">Back to Modules</button>        </div>
+    </div>
+</div>

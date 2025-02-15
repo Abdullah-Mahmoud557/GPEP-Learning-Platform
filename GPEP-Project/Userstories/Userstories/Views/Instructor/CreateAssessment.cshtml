@@ -1,0 +1,62 @@
+@model Userstories.Models.Assessments
+
+<h2>Create New Assessment</h2>
+
+<form asp-action="CreateAssessment" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" required />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" required />
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TotalMarks"></label>
+        <input asp-for="TotalMarks" type="number" class="form-control" required />
+        <span asp-validation-for="TotalMarks" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PassingMarks"></label>
+        <input asp-for="PassingMarks" type="number" class="form-control" required />
+        <span asp-validation-for="PassingMarks" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Criteria"></label>
+        <input asp-for="Criteria" class="form-control" />
+        <span asp-validation-for="Criteria" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weightage"></label>
+        <input asp-for="Weightage" type="number" step="0.01" class="form-control" required />
+        <span asp-validation-for="Weightage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ModuleID"></label>
+        <input asp-for="ModuleID" type="number" class="form-control" required />
+        <span asp-validation-for="ModuleID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CourseID"></label>
+        <input asp-for="CourseID" type="number" class="form-control" required />
+        <span asp-validation-for="CourseID" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="ViewAssessments" class="btn btn-secondary">Cancel</a>
+</form>

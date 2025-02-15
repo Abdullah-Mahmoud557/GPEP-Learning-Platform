@@ -1,0 +1,32 @@
+@model Userstories.Models.LearningGoal
+
+@{
+    ViewData["Title"] = "Delete Learning Goal";
+}
+
+<h2>Delete Learning Goal</h2>
+
+<div class="alert alert-warning">
+    <p>Are you sure you want to delete this learning goal?</p>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.ID</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+
+        <dt class="col-sm-2">Deadline</dt>
+        <dd class="col-sm-10">@Model.Deadline.ToString("yyyy-MM-dd HH:mm")</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+    </dl>
+</div>
+<form asp-action="DeleteGoalConfirmed" method="post">
+    <input type="hidden" asp-for="ID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="ViewGoals" class="btn btn-secondary">Cancel</a>
+</form>

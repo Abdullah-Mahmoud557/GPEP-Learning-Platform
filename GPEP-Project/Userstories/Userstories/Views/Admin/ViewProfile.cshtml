@@ -1,0 +1,26 @@
+@model Userstories.Models.Admin
+
+<h2>My Profile</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4>Email</h4>
+        <p>@Model.Email</p>
+
+        <h4>Password</h4>
+        <p>@Model.Password</p>
+
+        <h4>Profile Image</h4>
+        @if (Model.ImageData != null)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.ImageData)" alt="Profile Image" class="img-thumbnail" style="max-width: 200px;" />
+        }
+        else
+        {
+            <p>No profile image uploaded.</p>
+        }
+
+        <a asp-action="EditProfileDetails" class="btn btn-primary mt-3">Edit Profile</a>
+        <a asp-action="Dashboard" asp-route-id="@Model.AdminID" class="btn btn-secondary mt-3">Cancel</a>
+    </div>
+</div>

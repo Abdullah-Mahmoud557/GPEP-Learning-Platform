@@ -1,0 +1,100 @@
+﻿@model Userstories.Models.Course
+
+@{
+    ViewData["Title"] = "Course Details";
+    var learnerId = ViewBag.LearnerId ?? 3;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">@Model.Title</h2>
+            <dl class="row">
+                <dt class="col-sm-3">Learning Objective</dt>
+                <dd class="col-sm-9">@Model.LearningObjective</dd>
+
+                <dt class="col-sm-3">Credit Points</dt>
+                <dd class="col-sm-9">@Model.CreditPoints</dd>
+
+                <dt class="col-sm-3">Difficulty Level</dt>
+                <dd class="col-sm-9">@Model.DifficultyLevel</dd>
+
+                <dt class="col-sm-3">Description</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
+            </dl>
+            <button class="btn btn-primary" onclick="showEnrollPopup(@Model.CourseID, @learnerId)">Enroll</button>
+            <button class="btn btn-secondary" onclick="location.href='/Courses/AllTheCourses?learnerId=@learnerId'">Go Back</button>
+        </div>
+    </div>
+</div>
+
+<!-- Enroll Confirmation Modal -->
+<div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enrollModalLabel">Confirm Enrollment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to enroll in this course?
+                <div id="prerequisitesMessage" class="mt-3">
+                    <!-- Prerequisites message will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" onclick="enrollCourse()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="enrollToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Notification</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastMessage">
+            <!-- Toast message will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    async function showEnrollPopup(courseId, learnerId) {
+        document.getElementById('enrollCourseId').value = courseId;
+        document.getElementById('enrollLearnerId').value = learnerId;
+
+        const response = await fetch(`/Courses/Prerequisites?courseId=${courseId}&learnerId=${learnerId}`);
+        const data = await response.json();
+        document.getElementById('prerequisitesMessage').innerText = data.message;
+
+        var enrollModal = new bootstrap.Modal(document.getElementById('enrollModal'));
+        enrollModal.show();
+    }
+
+    async function enrollCourse() {
+        const courseId = document.getElementById('enrollCourseId').value;
+        const learnerId = document.getElementById('enrollLearnerId').value;
+
+        const response = await fetch(`/Courses/Enroll`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ courseId, learnerId })
+        });
+
+        const data = await response.json();
+        document.getElementById('toastMessage').innerText = data.message;
+
+        var enrollModal = bootstrap.Modal.getInstance(document.getElementById('enrollModal'));
+        enrollModal.hide();
+
+        var enrollToast = new bootstrap.Toast(document.getElementById('enrollToast'));
+        enrollToast.show();
+    }
+</script>

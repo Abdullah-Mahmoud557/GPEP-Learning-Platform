@@ -1,0 +1,36 @@
+@model Userstories.Models.LearningPath
+
+<h2>Edit Learning Path</h2>
+
+<!-- Validation Summary -->
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-action="EditLearningPath" method="post">
+    <input type="hidden" asp-for="PathID" />
+
+    <div class="form-group">
+        <label asp-for="CompletionStatus"></label>
+        <input asp-for="CompletionStatus" class="form-control" />
+        <span asp-validation-for="CompletionStatus" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomContent"></label>
+        <textarea asp-for="CustomContent" class="form-control"></textarea>
+        <span asp-validation-for="CustomContent" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AdaptiveRules"></label>
+        <textarea asp-for="AdaptiveRules" class="form-control"></textarea>
+        <span asp-validation-for="AdaptiveRules" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="ViewLearningPaths" class="btn btn-success">cancel</a>
+</form>
+
+<!-- Ensure validation scripts are included -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

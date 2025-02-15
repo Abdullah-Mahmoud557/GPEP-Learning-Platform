@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Confirm Account Deletion";
+}
+
+<h2>Confirm Account Deletion</h2>
+<p>Are you sure you want to delete your account? This action cannot be undone.</p>
+
+<form asp-action="RemoveAccount" method="post">
+    <button type="submit" class="btn btn-danger">Delete My Account</button>
+    <a asp-action="Dashboard2" class="btn btn-secondary">Cancel</a>
+</form>

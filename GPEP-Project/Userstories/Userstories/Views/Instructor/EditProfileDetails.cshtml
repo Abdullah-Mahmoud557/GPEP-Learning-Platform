@@ -1,0 +1,32 @@
+@model Userstories.Models.Instructor
+
+<h2>Edit My Profile</h2>
+
+<form asp-action="EditProfileDetails" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LatestQualification"></label>
+        <input asp-for="LatestQualification" class="form-control" />
+        <span asp-validation-for="LatestQualification" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ExpertiseArea"></label>
+        <input asp-for="ExpertiseArea" class="form-control" />
+        <span asp-validation-for="ExpertiseArea" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+    <a asp-action="Dashboard" asp-route-id="@Model.InstructorID" class="btn btn-secondary mt-3">Cancel</a>
+</form>

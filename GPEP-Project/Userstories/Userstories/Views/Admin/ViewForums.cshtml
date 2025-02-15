@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Forum ID</th>
+        <th>Module ID</th>
+        <th>Course ID</th>
+        <th>Title</th>
+        <th>Last Active</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var forum in Model)
+    {
+        <tr>
+            <td>@forum.ForumID</td>
+            <td>@forum.ModuleID</td>
+            <td>@forum.CourseID</td>
+            <td>@forum.Title</td>
+            <td>@forum.LastActive.ToString("g")</td>
+            <td>@forum.Description</td>
+            <td>
+                <a asp-action="EditForum" asp-route-id="@forum.ForumID" class="btn btn-warning btn-sm">Edit</a>
+                <form asp-action="DeleteForum" asp-route-id="@forum.ForumID" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a asp-action="CreateForum" class="btn btn-primary">Create Forum</a>
+<a asp-action="Dashboard2" class="btn btn-success">Back to Dashboard</a>

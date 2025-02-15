@@ -1,0 +1,38 @@
+@model IEnumerable<dynamic>
+
+<h2>Assessment Breakdown</h2>
+
+@if (ViewBag.AverageScore != null)
+{
+    <div class="alert alert-info">
+        <strong>Average Score:</strong> @ViewBag.AverageScore
+    </div>
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Learner ID</th>
+        <th>Scored Points</th>
+        <th>Total Marks</th>
+        <th>Percentage</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LearnerID</td>
+            <td>@item.ScoredPoints</td>
+            <td>@item.TotalMarks</td>
+            <td>@item.Percentage.ToString("F2")%</td>
+            <td>
+                <a asp-action="EditScore" asp-route-learnerId="@item.LearnerID" asp-route-assessmentId="@item.AssessmentID" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<button class="btn btn-secondary" onclick="history.back()">Back</button>

@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Qualification</th>
+        <th>Expertise</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var instructor in Model)
+    {
+        <tr>
+            <td>@instructor.InstructorID</td>
+            <td>@instructor.FirstName</td>
+            <td>@instructor.LastName</td>
+            <td>@instructor.Email</td>
+            <td>@instructor.LatestQualification</td>
+            <td>@instructor.ExpertiseArea</td>
+            <td>
+                <form asp-action="DeleteInstructor" method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="@instructor.InstructorID" />
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this instructor?');">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+   
+</table>
+<a asp-action="Dashboard2" class="btn btn-success">Cancel</a>

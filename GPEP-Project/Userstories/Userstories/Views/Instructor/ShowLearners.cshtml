@@ -1,0 +1,127 @@
+@model List<Userstories.Models.Learner>
+
+@{
+    ViewData["Title"] = "Learners";
+}
+
+<!-- Custom CSS for Visual Enhancements -->
+<style>
+    /* Page Title */
+    h2 {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* Search Box */
+    .input-group {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Table Enhancements */
+    .table {
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    thead th {
+        text-align: center;
+        padding: 12px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    tbody tr:hover {
+        background-color: #e2e6ea;
+    }
+
+    td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+    }
+
+    /* Buttons */
+    button, .btn {
+        border-radius: 4px;
+    }
+
+    .btn-success, .btn-primary {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+
+    /* Container */
+    .container {
+        max-width: 90%;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Learners</h2>
+
+    <!-- Search Form -->
+    <form asp-action="SearchLearnerById" method="get" class="mb-4">
+        <div class="input-group shadow-sm">
+            <input type="text" name="learnerId" class="form-control" placeholder="Enter Learner ID" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover shadow-sm">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Country</th>
+                <th>Cultural Background</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var learner in Model)
+            {
+                <tr>
+                    <td>@learner.LearnerID</td>
+                    <td>@learner.Email</td>
+                    <td>@learner.FirstName</td>
+                    <td>@learner.LastName</td>
+                    <td>@learner.Gender</td>
+                    <td>@learner.BirthDate?.ToShortDateString()</td>
+                    <td>@learner.Country</td>
+                    <td>@learner.CulturalBackground</td>
+                    <td>@learner.CreatedAt.ToShortDateString()</td>
+                    <td>
+                        <form asp-action="CompletedCourses" method="get" class="d-inline">
+                            <input type="hidden" name="learnerId" value="@learner.LearnerID" />
+                            <button class="btn btn-success" type="submit">Show Completed Courses</button>
+                        </form>
+                        <form asp-action="SendNotification1" method="get" class="d-inline">
+                            <input type="hidden" name="learnerId" value="@learner.LearnerID" />
+                            <button class="btn btn-primary" type="submit">Send Notification</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

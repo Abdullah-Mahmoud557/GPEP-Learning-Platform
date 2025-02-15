@@ -1,0 +1,146 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPEP - Welcome</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            background: linear-gradient(to right, #4b0082, #6a0dad, #8a2be2, #6a0dad, #4b0082); /* Purple and blue gradient */
+            background-size: 500% 500%;
+            animation: gradientShift 3s ease infinite;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .welcome-container {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .site-name {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffd700; /* Gold color */
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px #000;
+            position: relative;
+            background: linear-gradient(90deg, #ffd700, #fff);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: slideIn 3s ease forwards, textShadowShift 5s ease infinite, shine 3s ease-in-out infinite;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-150%);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes textShadowShift {
+            0%, 100% {
+                text-shadow: 2px 2px 5px #4b0082, 4px 4px 10px #6a0dad, 6px 6px 15px #8a2be2;
+            }
+
+            50% {
+                text-shadow: 2px 2px 5px #8a2be2, 4px 4px 10px #6a0dad, 6px 6px 15px #4b0082;
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: -200%;
+            }
+
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #6a0dad; /* Dark purple button color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+            .btn:hover {
+                background-color: #4b0082; /* Indigo for hover */
+            }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1 class="site-name">GPEP</h1>
+        <p>Welcome to GPEP! Your gateway to excellence and progress.</p>
+        <button class="btn" onclick="window.location.href='/Account/ChooseRole'">Explore Now</button>
+    </div>
+    <footer>
+        &copy; 2024 GPEP. All rights reserved.
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("Welcome to GPEP! Enjoy exploring our platform.");
+        }
+    </script>
+</body>
+</html>

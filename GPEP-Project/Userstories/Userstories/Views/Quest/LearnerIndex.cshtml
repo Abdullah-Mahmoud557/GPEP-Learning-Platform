@@ -1,0 +1,48 @@
+@model IEnumerable<Userstories.Models.Collaborative>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Quests</h1>
+    <button class="btn btn-secondary mb-3" onclick="window.location.href='@Url.Action("Dashboard2", "Learner")'">Go Back to Dashboard</button>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Difficulty Level</th>
+            <th>Criteria</th>
+            <th>Max Participants</th>
+            <th>Deadline</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var quest in Model)
+        {
+            <tr>
+                <td>@quest.title</td>
+                <td>@quest.description</td>
+                <td>@quest.difficulty_level</td>
+                <td>@quest.criteria</td>
+                <td>@quest.max_num_participants</td>
+                <td>@quest.deadline.ToString()</td>
+                <td>
+                    <a href="@Url.Action("CheckParticipants", "Quest", new { questId = quest.QuestID })" class="btn btn-primary">Check Participants</a>
+                    <form asp-action="Participate" method="post" class="d-inline">
+                        <input type="hidden" name="questId" value="@quest.QuestID" />
+                        <button type="submit" class="btn btn-success">Participate</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

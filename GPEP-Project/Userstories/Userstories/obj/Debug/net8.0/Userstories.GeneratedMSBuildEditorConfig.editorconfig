@@ -1,0 +1,415 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Userstories
+build_property.RootNamespace = Userstories
+build_property.ProjectDir = C:\Users\mahmo\GPEP-Learning-Platform\GPEP Project\Userstories\Userstories\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mahmo\GPEP-Learning-Platform\GPEP Project\Userstories\Userstories
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Account/ChooseRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaG9vc2VSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Account/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Achievements/AddAchievement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNoaWV2ZW1lbnRzXEFkZEFjaGlldmVtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Achievements/InstructorIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNoaWV2ZW1lbnRzXEluc3RydWN0b3JJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Achievements/MyAchievements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNoaWV2ZW1lbnRzXE15QWNoaWV2ZW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/CreateForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlRm9ydW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/EditForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEZvcnVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/EditProfileDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2ZpbGVEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/ManageInstructors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlSW5zdHJ1Y3RvcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/ManageLearners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlTGVhcm5lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/ManageProfiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUHJvZmlsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2lnbnVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/ViewForums.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0ZvcnVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Admin/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld1Byb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Courses/Activities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xBY3Rpdml0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Courses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Courses/Modules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xNb2R1bGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/Activities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBY3Rpdml0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/AddActivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBZGRBY3Rpdml0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/AddAssessment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBZGRBc3Nlc3NtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/Breakdown.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxCcmVha2Rvd24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/CompletedCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDb21wbGV0ZWRDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/CreateAssessment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDcmVhdGVBc3Nlc3NtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/CreateForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDcmVhdGVGb3J1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/CreateLearningGoal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDcmVhdGVMZWFybmluZ0dvYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/CreateLearningPath.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDcmVhdGVMZWFybmluZ1BhdGguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/DeleteGoal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxEZWxldGVHb2FsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/EditForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0Rm9ydW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/EditGoal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0R29hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/EditLearningPath.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0TGVhcm5pbmdQYXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/EditProfileDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0UHJvZmlsZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/EditScore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0U2NvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/HighestScoreAssessments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxIaWdoZXN0U2NvcmVBc3Nlc3NtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/InstructorDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbnN0cnVjdG9yRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/Modules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxNb2R1bGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/SendNotification1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxTZW5kTm90aWZpY2F0aW9uMS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ShowLearners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxTaG93TGVhcm5lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/SingleCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxTaW5nbGVDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewAssessments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3QXNzZXNzbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3Q291cnNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewForums.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3Rm9ydW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewGoals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3R29hbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewLearningPaths.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3TGVhcm5pbmdQYXRocy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewModuleAssessments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3TW9kdWxlQXNzZXNzbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3UG9zdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Instructor/ViewTakenAssessmentsByAssessmentId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3VGFrZW5Bc3Nlc3NtZW50c0J5QXNzZXNzbWVudElkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/AccountDeleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxBY2NvdW50RGVsZXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/AssessmentBreakdown.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxBc3Nlc3NtZW50QnJlYWtkb3duLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/AvailableGoals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxBdmFpbGFibGVHb2Fscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ConfirmAccountDeletion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxDb25maXJtQWNjb3VudERlbGV0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/CourseModules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxDb3Vyc2VNb2R1bGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Courses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/CreateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxDcmVhdGVQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/EditProfileDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxFZGl0UHJvZmlsZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/highstAssesment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxoaWdoc3RBc3Nlc21lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/LearnerDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxMZWFybmVyRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/MyGoals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxNeUdvYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Profiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxQcm9maWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxTZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxTaG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ShowActivities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxTaG93QWN0aXZpdGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/SingleCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxTaW5nbGVDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewForums.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3Rm9ydW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewLearningPaths.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3TGVhcm5pbmdQYXRocy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3Tm90aWZpY2F0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3UG9zdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Learner/ViewTakenAssessments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxWaWV3VGFrZW5Bc3Nlc3NtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Modules/Details2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxlc1xEZXRhaWxzMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/PersonalizationProfiles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxpemF0aW9uUHJvZmlsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/PersonalizationProfiles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxpemF0aW9uUHJvZmlsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/PersonalizationProfiles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxpemF0aW9uUHJvZmlsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/PersonalizationProfiles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxpemF0aW9uUHJvZmlsZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/PersonalizationProfiles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxpemF0aW9uUHJvZmlsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/AddQuest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcQWRkUXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/AdminIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcQWRtaW5JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/CheckParticipants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcQ2hlY2tQYXJ0aWNpcGFudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/InstructorIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcSW5zdHJ1Y3RvckluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/LearnerIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcTGVhcm5lckluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/MyQuests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcTXlRdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Quest/UpdateDeadline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3RcVXBkYXRlRGVhZGxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mahmo/GPEP-Learning-Platform/GPEP Project/Userstories/Userstories/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b7uwe3ra5p

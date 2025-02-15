@@ -1,0 +1,44 @@
+﻿@model Userstories.Models.Course
+
+<h2>Course Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Title
+        </dd>
+        <dt class="col-sm-2">
+            Learning Objective
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LearningObjective
+        </dd>
+        <dt class="col-sm-2">
+            Credit Points
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CreditPoints
+        </dd>
+        <dt class="col-sm-2">
+            Difficulty Level
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DifficultyLevel
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Description
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="@Url.Action("Edit", "Courses", new { id = Model.CourseID })">Edit</a> |
+    <a href="@Url.Action("Index", "Courses")">Back to List</a>
+</div>

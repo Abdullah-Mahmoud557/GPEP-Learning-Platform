@@ -1,0 +1,26 @@
+@model Userstories.Models.TakenAssessments
+
+<h2>Edit Assessment Score</h2>
+
+<form asp-action="EditScore" method="post">
+    <input type="hidden" asp-for="LearnerID" />
+    <input type="hidden" asp-for="AssessmentID" />
+
+    <div class="form-group">
+        <label>Assessment Title</label>
+        <input type="text" value="@Model.Assessment.Title" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label>Total Marks</label>
+        <input type="text" value="@Model.Assessment.TotalMarks" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label>Current Score</label>
+        <input asp-for="ScoredPoints" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Score</button>
+    <a asp-action="ViewAssessments" class="btn btn-secondary">Cancel</a>
+</form>

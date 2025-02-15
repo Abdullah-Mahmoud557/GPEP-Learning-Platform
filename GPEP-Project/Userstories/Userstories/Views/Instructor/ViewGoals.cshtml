@@ -1,0 +1,38 @@
+@model IEnumerable<Userstories.Models.LearningGoal>
+
+@{
+    ViewData["Title"] = "View Goals";
+}
+
+<h2>Learning Goals</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Deadline</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var goal in Model)
+    {
+        <tr>
+            <td>@goal.ID</td>
+            <td>@goal.Status</td>
+            <td>@goal.Deadline.ToString("yyyy-MM-dd")</td>
+            <td>@goal.Description</td>
+            <td>
+                <a asp-action="EditGoal" asp-route-id="@goal.ID" class="btn btn-primary btn-sm">Edit</a>
+                <a asp-action="DeleteGoal" asp-route-id="@goal.ID" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+   
+    </tbody>
+   
+</table>
+<a asp-action="CreateLearningGoal" class="btn btn-success">Add New Learning Goal</a>
+<a asp-action="Dashboard2" class="btn btn-success">cancel</a>

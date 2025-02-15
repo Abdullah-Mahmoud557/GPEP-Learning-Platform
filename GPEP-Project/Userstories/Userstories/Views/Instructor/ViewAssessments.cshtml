@@ -1,0 +1,49 @@
+@model IEnumerable<Userstories.Models.Assessments>
+
+<h2>All Assessments</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No assessments available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Assessment Title</th>
+            <th>Assessment Type</th>
+            <th>Total Marks</th>
+            <th>Passing Marks</th>
+            <th>Criteria</th>
+            <th>Weightage</th>
+            <th>Description</th>
+            <th>Module ID</th>
+            <th>Course ID</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var assessment in Model)
+        {
+            <tr>
+                <td>@assessment.Title</td>
+                <td>@assessment.Type</td>
+                <td>@assessment.TotalMarks</td>
+                <td>@assessment.PassingMarks</td>
+                <td>@(assessment.Criteria ?? "N/A")</td>
+                <td>@(assessment.Weightage.HasValue ? assessment.Weightage.Value.ToString("F2") : "N/A")</td>
+                <td>@(assessment.Description ?? "N/A")</td>
+                <td>@assessment.ModuleID</td>
+                <td>@assessment.CourseID</td>
+                <td>
+                    <a asp-action="Breakdown" asp-route-id="@assessment.ID" class="btn btn-primary btn-sm">Breakdown</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<a asp-action="CreateAssessment" class="btn btn-primary mb-3">Create New Assessment</a>
+<a asp-action="Dashboard2" class="btn btn-success">Back to Dashboard</a>

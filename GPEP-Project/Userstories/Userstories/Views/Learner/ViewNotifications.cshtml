@@ -1,0 +1,38 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Timestamp</th>
+        <th>Message</th>
+        <th>Urgency Level</th>
+        <th>Read Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Timestamp</td>
+            <td>@item.Message</td>
+            <td>@item.UrgencyLevel</td>
+            <td>@(item.ReadStatus ? "Read" : "Unread")</td>
+            <td>
+                @if (!item.ReadStatus)
+                {
+                    <form asp-action="MarkAsRead" method="post" style="display:inline;">
+                        <input type="hidden" name="notificationId" value="@item.NotificationID" />
+                        <button type="submit" class="btn btn-primary btn-sm">Mark as Read</button>
+                    </form>
+                }
+                else
+                {
+                    <span class="text-muted">Already Read</span>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+<a asp-action="Dashboard2" class="btn btn-primary">Back to Dashboard</a>
